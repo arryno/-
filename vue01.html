@@ -15,13 +15,21 @@
         <p v-text="mseege">会被覆盖的内容</p>
         <p>{{mseege}}</p>
         <p v-html="ht"></p>
+        <input :value="connt">
+        <button @click="click">+1</button>
     </div>
     <script>
         const vm=new Vue({
             el:'#app',
             data:{
+                connt:0,
                 mseege:'hello ',
                 ht:'<h1 style="color:red;">我说李德鹏</h1>'
+            },
+            methods:{
+                click(){
+                    this.connt+=1
+                }
             }
         })
     </script>
